@@ -290,7 +290,7 @@ export default function Home() {
           <p>For help with the converter or to suggest an improvement, contact the website owner using the support email published here.</p>
           <div className="info-box">
             <h3 style={{ marginTop: 0 }}>Email support</h3>
-            <p style={{ marginBottom: 0 }}>Replace this text with your real public support email before publishing your website.</p>
+            <p style={{ marginBottom: 0 }}>Contact us at: quicktools.support@gmail.com</p>
           </div>
           <p style={{ fontSize: 13 }}>Please don't include passwords or other sensitive information in support messages.</p>
           <button className="nav-button" onClick={() => navigate("home")}>Back to QuickTools</button>
