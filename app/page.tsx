@@ -68,6 +68,19 @@ button,a{font:inherit;-webkit-tap-highlight-color:transparent}
 .eyebrow{color:#67e8f9;text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:800}
 .guide h2{font-size:29px;margin:12px 0 26px}
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.edu-section{max-width:850px;margin:58px auto 0;padding-top:38px;border-top:1px solid #202b3e;text-align:left}
+.edu-section h2{font-size:25px;line-height:1.3;margin:12px 0 16px}
+.edu-section h3{font-size:16px;margin:24px 0 8px}
+.edu-section p,.edu-section li{color:#a9b6ca;font-size:14px;line-height:1.85}
+.edu-callout{padding:18px 20px;border-left:3px solid #60a5fa;background:#12243a;border-radius:0 12px 12px 0;margin:20px 0}
+.table-wrap{overflow-x:auto;border:1px solid #29364b;border-radius:12px;margin-top:20px}
+.compare-table{width:100%;min-width:520px;border-collapse:collapse;text-align:left;font-size:13px}
+.compare-table th{background:#173d6c;color:#f8fafc;padding:14px}
+.compare-table td{padding:13px 14px;border-top:1px solid #29364b;color:#c5d0df;line-height:1.65}
+.compare-table tbody tr:nth-child(odd){background:#101827}
+.faq-item{padding:17px 0;border-bottom:1px solid #263248}
+.faq-item h3{margin:0 0 7px;font-size:15px}
+.faq-item p{margin:0}
 .step-number{color:#67e8f9;font-size:13px;font-weight:800}
 .step h3{font-size:14px;margin:10px 0 7px}
 .footer{border-top:1px solid #202a3d;margin-top:75px}
@@ -97,6 +110,7 @@ button,a{font:inherit;-webkit-tap-highlight-color:transparent}
 .feature{padding:20px}
 .guide{margin-top:60px}
 .guide h2{font-size:25px}
+.edu-section h2{font-size:23px}
 .steps{grid-template-columns:1fr;gap:25px}
 .footer{margin-top:50px}
 .footer-inner{padding:25px 0;align-items:flex-start;flex-direction:column}
@@ -422,6 +436,72 @@ export default function Home() {
                   <div className="step"><div className="step-number">01 / SELECT</div><h3>Choose an image</h3><p>Select a JPG or PNG image from your device.</p></div>
                   <div className="step"><div className="step-number">02 / CONVERT</div><h3>Pick your format</h3><p>Choose the output format that suits your needs.</p></div>
                   <div className="step"><div className="step-number">03 / DOWNLOAD</div><h3>Save your image</h3><p>Download your converted image directly to your device.</p></div>
+                </div>
+              </section>
+
+              <section className="edu-section" aria-labelledby="format-guide-title">
+                <div className="eyebrow">Choose the right format</div>
+                <h2 id="format-guide-title">JPG vs. PNG: What's the difference?</h2>
+                <p>JPG and PNG are both common image formats, but they suit different needs. JPG usually creates smaller files for photographs, while PNG preserves image data without lossy compression and supports transparency.</p>
+                <div className="table-wrap">
+                  <table className="compare-table">
+                    <thead><tr><th>Feature</th><th>JPG / JPEG</th><th>PNG</th></tr></thead>
+                    <tbody>
+                      <tr><td>Best suited for</td><td>Photographs and everyday sharing</td><td>Logos, diagrams, screenshots, and graphics</td></tr>
+                      <tr><td>Compression</td><td>Lossy; some image detail may be discarded</td><td>Lossless; image data is preserved when saved as PNG</td></tr>
+                      <tr><td>Transparency</td><td>Not supported</td><td>Supported</td></tr>
+                      <tr><td>Typical file size</td><td>Often smaller for photographs</td><td>Can be larger, depending on the image</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="edu-callout"><strong>Remember:</strong> Converting a JPG to PNG does not restore detail already lost when the JPG was created, and it does not automatically make the background transparent.</div>
+              </section>
+
+              <section className="edu-section" aria-labelledby="why-convert-title">
+                <div className="eyebrow">Practical tips</div>
+                <h2 id="why-convert-title">When should you convert an image?</h2>
+                <h3>When JPG to PNG is useful</h3>
+                <p>PNG can be useful when you plan to edit an image repeatedly, need to preserve sharp edges in graphics, or need a format that supports transparent areas. The converted file will not regain details that were lost in the original JPG.</p>
+                <h3>When PNG to JPG is useful</h3>
+                <p>JPG can be a good choice for photographs and situations where a smaller file is more important than preserving every pixel exactly. JPG does not support transparency, so transparent areas become a solid background during conversion.</p>
+                <h3>What happens to image quality and file size?</h3>
+                <p>PNG files may be larger than JPG files, especially for photographs. When converting PNG to JPG, this tool uses JPEG compression, which can change image details slightly. Choose the format based on how you intend to use the image.</p>
+              </section>
+
+              <section className="edu-section" aria-labelledby="privacy-guide-title">
+                <div className="eyebrow">Privacy and security</div>
+                <h2 id="privacy-guide-title">How your images are processed</h2>
+                <p>QuickTools performs image conversion in your browser. The selected image is processed locally by the converter rather than uploaded to a QuickTools conversion server. Your browser temporarily handles the selected file while you use the tool.</p>
+                <p>This statement concerns image conversion only. Website hosting, security, analytics, or advertising services may handle technical information as described in the Privacy Policy.</p>
+                <p><button className="back-button" onClick={() => navigate("privacy")}>Read our Privacy Policy →</button></p>
+              </section>
+
+              <section className="edu-section" aria-labelledby="faq-title">
+                <div className="eyebrow">Quick answers</div>
+                <h2 id="faq-title">Frequently asked questions</h2>
+                <div className="faq-item">
+                  <h3>Is QuickTools free to use?</h3>
+                  <p>Yes. The image converter is available to use without creating an account.</p>
+                </div>
+                <div className="faq-item">
+                  <h3>Can I convert PNG to JPG as well as JPG to PNG?</h3>
+                  <p>Yes. Select a JPG or PNG image, choose your preferred output format, and use the convert button to download it.</p>
+                </div>
+                <div className="faq-item">
+                  <h3>Will converting JPG to PNG make the image sharper?</h3>
+                  <p>No. PNG avoids adding further lossy compression when saved, but converting a JPG cannot recover details already lost in the original file.</p>
+                </div>
+                <div className="faq-item">
+                  <h3>Will a JPG-to-PNG conversion remove the background?</h3>
+                  <p>No. It changes the file format only. You need a separate background-removal or image-editing tool to make a background transparent.</p>
+                </div>
+                <div className="faq-item">
+                  <h3>What happens to transparent areas when I convert PNG to JPG?</h3>
+                  <p>JPG does not support transparency. In QuickTools, transparent areas are filled with white in the JPG output.</p>
+                </div>
+                <div className="faq-item">
+                  <h3>Are my images uploaded to a server?</h3>
+                  <p>The converter processes selected images locally in your browser and does not upload them to a QuickTools conversion server. See the Privacy Policy for details about website services and technical information.</p>
                 </div>
               </section>
             </div>
